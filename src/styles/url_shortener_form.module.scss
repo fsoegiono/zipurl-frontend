@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--color-gray);
+  border-radius: 4px;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 1px 5px var(--color-gray);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  padding: 8px 15px;
+  font-size: 16px;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-secondary);
+  }
+
+  &:disabled {
+    background-color: var(--color-gray);
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: 16px;
+}
