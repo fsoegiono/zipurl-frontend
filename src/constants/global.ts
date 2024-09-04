@@ -1,1 +1,1 @@
-export const TITLE = 'URL Shortener';
+export const TITLE = 'Zipurl';

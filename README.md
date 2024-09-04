@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Zipurl Client Application
 
-## Getting Started
+This repository is for client application for URL shortener service, built with Next.js. It provides user-friendly interface for creating new shortened URLs, and looking up specified URL, and redirecting to the specified URL.
 
-First, run the development server:
+This repository works with URL shortener server, built with Node.js. Follow instruction to setup URL shortener server in [this repository](https://github.com/fsoegiono/zipurl-server).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Create shortened URLs from long URLs
+- Look up specified URL
+- Responsive design for mobile and desktop
+- Containerized with Docker for easy deployment, development, and consistency across environments
+- CI/CD pipeline using GitHub Actions
+- Deployed on AWS App Runner
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Live Web Application
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Zipurl is available online. You can find it here: https://h5mpnxcp5x.us-west-2.awsapprunner.com.
 
-## Learn More
+## Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+Ensure you have the following installed:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Docker
+- Docker Compose
+- Node.js (v18.0.0 or later)
+- npm (v9.0.0 or later)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Local Development
 
-## Deploy on Vercel
+1. Clone the repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```
+   git clone https://github.com/fsoegiono/zipurl-frontend.git
+   cd zipurl-frontend
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Update `.env` file in the root directory
+
+   ```
+   NEXT_PUBLIC_API_URL=http://localhost:8080/api/v1
+   ```
+
+3. Run the container:
+
+   ```
+   docker-compose up
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## Environments
+
+- `NEXT_PUBLIC_API_URL`: Zipurl server API endpoint
+
+## Available Scripts
+
+- `npm run dev`: Runs the app in development mode
+- `npm test`: Runs unit and functional test
+- `npm run build`: Builds the app for production
+- `npm start`: Runs the built app in production mode
+
+## CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration and deployment. The pipeline is configured to:
+
+- Run tests
+- Build Docker image
+- Push the image to AWS Elastic Container Registry (ECR)
+- Finally, deployed the application to AWS App Runner
+
+The workflow is defined in `.github/workflows/deploy-ecr.yml`.
