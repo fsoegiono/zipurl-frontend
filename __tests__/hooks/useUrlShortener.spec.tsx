@@ -4,7 +4,7 @@ import { shortenUrl } from '@/utils/api';
 
 jest.mock('@/utils/api');
 
-describe('useUrlShortener', () => {
+describe('useUrlShortener hooks', () => {
   const mockShortenUrl = shortenUrl as jest.MockedFunction<typeof shortenUrl>;
 
   beforeEach(() => {

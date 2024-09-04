@@ -4,7 +4,7 @@ import { useUrlShortener } from '@/hooks/useUrlShortener';
 
 jest.mock('@/hooks/useUrlShortener');
 
-describe('Home', () => {
+describe('Home Component - Root Page', () => {
   it('should render URL shortener form and display shortened URL', async () => {
     const mockShortenUrl = jest.fn().mockResolvedValue('https://api.example.com/a1b2c3');
     (useUrlShortener as jest.Mock).mockReturnValue({

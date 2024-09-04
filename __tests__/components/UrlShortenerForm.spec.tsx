@@ -11,7 +11,7 @@ jest.mock('@/hooks/useUrlShortener');
 
 const mockOnShorten = jest.fn();
 
-describe('UrlShortenerForm', () => {
+describe('UrlShortenerForm Component', () => {
   const setupMockShortenUrl = (
     {
       mockShortenUrlValue = '',
@@ -54,7 +54,7 @@ describe('UrlShortenerForm', () => {
 
   it('should display error message when shortening fails', async () => {
     setupMockShortenUrl({
-      error: 'An error occurred while shortening the URL',
+      error: 'An error occurred while shortening the URL.',
     });
 
     const { getByPlaceholderText, getByText } = render(<UrlShortenerForm onShorten={mockOnShorten} />);
@@ -68,7 +68,7 @@ describe('UrlShortenerForm', () => {
     });
 
     await waitFor(() => {
-      expect(getByText('An error occurred while shortening the URL')).toBeInTheDocument();
+      expect(getByText('An error occurred while shortening the URL.')).toBeInTheDocument();
     });
   });
 });

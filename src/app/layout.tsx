@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import '@/styles/globals.scss';
+import { TITLE, METADATA_CONSTANT } from '@/constants';
 
 export const metadata: Metadata = {
-  title: "URL Shortener",
-  description: "Simple URL shortener application",
+  title: TITLE,
+  description: METADATA_CONSTANT.description,
   icons: '/icon.png',
 };
 

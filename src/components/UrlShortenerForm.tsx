@@ -1,6 +1,7 @@
 import styles from '@/styles/url_shortener_form.module.scss';
 import { Props } from '@/interfaces/UrlShortenerForm.interface';
 import { useUrlShortener } from '@/hooks/useUrlShortener';
+import { URL_SHORTENER_FORM_COMPONENT_CONSTANT } from '@/constants';
 
 export const UrlShortenerForm: React.FC<Props> = ({ onShorten }) => {
   const { shortenUrl, isLoading, error } = useUrlShortener();
@@ -23,13 +24,16 @@ export const UrlShortenerForm: React.FC<Props> = ({ onShorten }) => {
     <form onSubmit={handleSubmit} className={styles.form}>
       <input
         type="url"
-        placeholder="Enter URL to shorten"
+        placeholder={URL_SHORTENER_FORM_COMPONENT_CONSTANT.placeholder}
         required
         className={styles.input}
         name='url'
       />
       <button type="submit" disabled={isLoading} className={styles.button}>
-        {isLoading ? 'Shortening...' : 'Shorten'}
+        {isLoading
+          ? URL_SHORTENER_FORM_COMPONENT_CONSTANT.loadingLabel
+          : URL_SHORTENER_FORM_COMPONENT_CONSTANT.buttonLabel
+        }
       </button>
       {error && <p className={styles.error}>{error}</p>}
     </form>

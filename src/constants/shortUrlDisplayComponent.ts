@@ -1,0 +1,5 @@
+const SHORT_URL_DISPLAY_COMPONENT_CONSTANT = {
+  label: 'Shortened URL:'
+}
+
+export default SHORT_URL_DISPLAY_COMPONENT_CONSTANT;

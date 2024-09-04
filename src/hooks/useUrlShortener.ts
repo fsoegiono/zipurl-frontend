@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { shortenUrl } from '@/utils/api';
+import { USE_URL_SHORTENER_HOOKS_CONSTANT } from '@/constants';
 
 export const useUrlShortener = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +14,7 @@ export const useUrlShortener = () => {
       const shortUrl = await shortenUrl(url);
       return shortUrl;
     } catch (err) {
-      setError('An error occurred while shortening the URL');
+      setError(USE_URL_SHORTENER_HOOKS_CONSTANT.errorMessage);
       return null;
     } finally {
       setIsLoading(false);
