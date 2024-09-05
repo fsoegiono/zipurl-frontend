@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { ShortUrlDisplay } from '@/components/ShortUrlDisplay';
+import ShortUrlDisplay from '@/components/ShortUrlDisplay';
 
 describe('ShortUrlDisplay Component', () => {
   it('should render short URL', () => {

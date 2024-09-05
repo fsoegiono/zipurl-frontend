@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react';
-import { UrlShortenerForm } from '@/components/UrlShortenerForm';
-import { ShortUrlDisplay } from '@/components/ShortUrlDisplay';
+import UrlShortenerForm from '@/components/UrlShortenerForm';
+import ShortUrlDisplay from '@/components/ShortUrlDisplay';
 import styles from '@/styles/home.module.scss';
 import { TITLE } from '@/constants';
 
-export default function Home() {
+const Home = () => {
   const [shortUrl, setShortUrl] = useState<string>('');
 
   return (
@@ -22,3 +22,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

@@ -3,7 +3,7 @@ import { Props } from '@/interfaces/UrlShortenerForm.interface';
 import { useUrlShortener } from '@/hooks/useUrlShortener';
 import { URL_SHORTENER_FORM_COMPONENT_CONSTANT } from '@/constants';
 
-export const UrlShortenerForm: React.FC<Props> = ({ onShorten }) => {
+const UrlShortenerForm: React.FC<Props> = ({ onShorten }) => {
   const { shortenUrl, isLoading, error } = useUrlShortener();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -39,3 +39,5 @@ export const UrlShortenerForm: React.FC<Props> = ({ onShorten }) => {
     </form>
   );
 };
+
+export default UrlShortenerForm;

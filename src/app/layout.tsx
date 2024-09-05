@@ -8,14 +8,16 @@ export const metadata: Metadata = {
   icons: '/icon.png',
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
   );
 }
+
+export default RootLayout;

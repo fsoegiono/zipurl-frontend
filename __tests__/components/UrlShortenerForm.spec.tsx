@@ -1,5 +1,5 @@
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
-import { UrlShortenerForm } from '@/components/UrlShortenerForm';
+import UrlShortenerForm from '@/components/UrlShortenerForm';
 import { useUrlShortener } from '@/hooks/useUrlShortener';
 
 interface mockShortenUrlProps {
