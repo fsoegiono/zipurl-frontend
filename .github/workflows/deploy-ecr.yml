@@ -50,6 +50,6 @@ jobs:
           ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t ${{ vars.ECR_REPOSITORY }} .
+          docker build --build-arg NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }} -t ${{ vars.ECR_REPOSITORY }} .
           docker tag ${{ vars.ECR_REPOSITORY }}:latest $ECR_REGISTRY/${{ vars.ECR_REPOSITORY }}:$IMAGE_TAG
           docker push $ECR_REGISTRY/${{ vars.ECR_REPOSITORY }}:$IMAGE_TAG

@@ -31,19 +31,13 @@ Ensure you have the following installed:
    cd zipurl-frontend
    ```
 
-2. Update `.env` file in the root directory
+2. Run the container:
 
    ```
-   NEXT_PUBLIC_API_URL=http://localhost:8080/api/v1
+   NEXT_PUBLIC_API_URL=http://localhost:8080 docker-compose up
    ```
 
-3. Run the container:
-
-   ```
-   docker-compose up
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ## Environments
 
